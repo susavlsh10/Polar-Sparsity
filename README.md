@@ -1,7 +1,6 @@
 # Polar-Sparsity
-Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity
 
-# Polar Sparsity: High Throughput LLM Inference with Sparsity and Hybrid Parallelism
+# Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity
 
 This repository contains the official implementation and kernels for our paper **"Polar Sparsity: High Throughput LLM Inference with Sparsity and Hybrid Parallelism."**
 
