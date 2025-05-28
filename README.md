@@ -241,4 +241,18 @@ python -m HybridTensor.benchmarks.generation.model_sparse_generation \
 
 ---
 
-We have dedicated significant effort to developing Polar Sparsity as a practical and impactful tool for efficient large language model inference. We hope our approach offers both technical value and inspiration, and we sincerely appreciate your time and consideration in reviewing our work.
+## Citation
+
+If you find our work helpful, please cite us:
+
+```bibtex
+@misc{shrestha2025polarsparsityhighthroughput,
+      title={Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity}, 
+      author={Susav Shrestha and Brad Settlemyer and Nikoli Dryden and Narasimha Reddy},
+      year={2025},
+      eprint={2505.14884},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2505.14884}, 
+}
+```
