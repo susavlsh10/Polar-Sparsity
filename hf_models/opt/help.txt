@@ -1,0 +1,8 @@
+modeling_opt: contains code to return mlp_activations
+modeling_sparse_opt: contains code to simulate sparse attention based on threshold
+modeling_sparse_opt_topk: contains code to simulate sparse attention based on top k activation
+modling_opt_router: contains code to return mlp_activations, attention output norms, router inputs
+modling_opt_attn: contains code to return input and output of the attention layer to understand importance
+                    use output_router_inputs: input to attention layer
+                    use output_attn_output: output of attention layer after adding residual
+                    
