@@ -4,6 +4,30 @@ Polar Sparsity is a framework for efficient sparse inferencing in large language
 
 ---
 
+## ⚠️ Requirements
+
+- Python 3.8+
+- [PyTorch](https://pytorch.org/) (tested on >=1.13)
+- [Transformers](https://github.com/huggingface/transformers) (tested on >=4.30)
+- See [`environment.yml`](environment.yml) for all dependencies.
+
+> **Note:** Some scripts may require additional dependencies (e.g., `matplotlib`, `pandas`).
+
+---
+
+## 🗂️ Model Indices
+
+The following table lists common model indices used in `--model_index` (see also `HybridTensor/utils/activations.py`):
+
+| Index | Model Name                              |
+|-------|-----------------------------------------|
+| 5     | facebook/opt-6.7b                       |
+| 8     | facebook/opt-66b                        |
+| 11    | meta-llama/Llama-2-7b-hf                |
+| 15    | meta-llama/Llama-3.1-70B                |
+
+---
+
 ## 📦 Repository Structure
 
 - **Router Data Collection & Training**
@@ -102,13 +126,12 @@ python -m HybridTensor.routers.mha.main_att \
     --ckpt_dir <PATH_TO_SAVE_CHECKPOINTS>
 ```
 
-For all layers, edit the [`/HybridTensor/routers/mha/train_mha_routers_topk.sh'](/HybridTensor/routers/mha/train_mha_routers_topk.sh) file with the number of GPUs available, model index, total number of layers, data_dir and ckpt_dir.  
+For all layers, edit the [`HybridTensor/routers/mha/train_mha_routers_topk.sh'](HybridTensor/routers/mha/train_mha_routers_topk.sh) file with the number of GPUs available, model index, total number of layers, data_dir and ckpt_dir.  
 
 ```bash
 ./HybridTensor/routers/mha/train_mha_routers_topk.sh
 ```
 To optimize the MLP layers for ReLU model with our dynamic layer wise top-k algorithm, you can use:
-
 
 
 ```bash
@@ -225,7 +248,7 @@ python run_sparse_transformer_block.py \
 
 ### 6. Sparse Generation
 
-Run end-to-end sparse generation using trained routers. This example uses a simple example how to build the spase model for end-to-end generation using the optimized kernels and batched inference. 
+Run end-to-end sparse generation using trained routers. This example shows how to build the sparse model for end-to-end generation using the optimized kernels and batched inference. 
 
 ```bash
 python -m HybridTensor.benchmarks.generation.model_sparse_generation \
@@ -236,7 +259,6 @@ python -m HybridTensor.benchmarks.generation.model_sparse_generation \
     --attn_topk <TOPK_VALUE>
 ```
 - `--batch_stats_dir`: used for sparse MLP models, path to the output from dynamic top-k optimization. Saved in configs/<model_name>
-
 
 
 ---
